@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+body {
+background-color: #f9bfff;
+font-family: Arial;
+}
+
+#main {
+width: 80%;
+max-width: 950px;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+text-align: center;
+font-size: 25px;
+padding-top: 30px;
+border: 2px solid black;
+height: 200px;
+background-image: url("tide pods.jpg");
+color: white;
+}
+
+label {
+display: block;
+}
+
+input {
+width: 30px;
+margin-left: 20px;
+}
+
+h2 {
+clear: both;
+padding-top: 20px;
+}
+
+button {
+width: 100px;
+margin-top: 20px;
+}
+
+</style>
+
+<body>
+<div id="main">
+<div id="header">
+<h1>What kind of tide pod are you?</h1>
+</div>
+<form id="form1">
+<fieldset>
+<h2>Q1: What is your favourite snack?</h2>
+<label for="kimchi"><input type="radio" name="snack" value="0" id="kimchi" />Kimchi Fries</label>
+<label for="nutel"><input type="radio" name="snack" value="1" id="nutel" />Nutella</label>
+<label for="guaca"><input type="radio" name="snack" value="2" id="guaca" />Guacamole</label>
+<label for="cak"><input type="radio" name="snack" value="3" id="cak"/>Cake</label>
+<label for="snack_tp"><input type="radio" name="snack" value="4" id="snack_tp"/>Tide Pod</label>
+
+<h2>Q2: What is your favourite drink?</h2>
+<label for="water"><input type="radio" name="drink" value="0" id="water"/>H2O</label>
+<label for="alcoh"><input type="radio" name="drink" value="1" id="alcoh"/>Vodka</label>
+<label for="redb"><input type="radio" name="drink" value="2" id="redb" />Redbull</label>
+<label for="coke"><input type="radio" name="drink" value="3" id="coke" />Coke/pepsi</label>
+<label for="drink_tp"><input type="radio" name="drink" value="4" id="drink_tp" />Tide Pod</label>
+
+<h2>Q3: What is your favourite TV show?</h2>
+<label for="friend"><input type="radio" name="tv" value="0" id="friend" />FRIENDS</label>
+<label for="river"><input type="radio" name="tv" value="1" id="river" />Riverdale</label>
+<label for="howto"><input type="radio" name="tv" value="2" id="howto" />How to get away with murder</label>
+<label for="howi"><input type="radio" name="tv" value="3" id="howi" />How I met your mother</label>
+<label for="tv_tp"><input type="radio" name="tv" value="4" id="tv_tp" />Tide Pot</label>
+
+<h2>Q4: Who is your favourite Waterloo math professor?</h2>
+<label for="conrad"><input type="radio" name="prof" value="0" id="conrad" />Conrad Hewitt</label>
+<label for="jun"><input type="radio" name="prof" value="1" id="jun" />Jun Liu</label>
+<label for="dan"><input type="radio" name="prof" value="2" id="dan" />Dan Wolczuk</label>
+<label for="jordan"><input type="radio" name="prof"  value="3" id="jordan" />Jordan Hamilton</label>
+<label for="prof_tp"><input type="radio" name="prof"  value="4" id="prof_tp" />Tide Pot</label>
+
+<h2>Q5: Choice of social media?</h2>
+<label for="reddit"><input type="radio" name="media" value="0" id="reddit" />Reddit</label>
+<label for="snap"><input type="radio" name="media" value="1" id="snap" />Snapchat</label>
+<label for="tind"><input type="radio" name="media" value="2" id="tind" />Tinder</label>
+<label for="ins"><input type="radio" name="media"  value="3" id="ins" />Instagram</label>
+<label for="media_tp"><input type="radio" name="media"  value="4" id="media_tp" />Tide Pot</label>
+
+<button type="submit" value="Submit">Submit</button>
+</fieldset>
+</form>
+    
+<p>Your Tide code is: <span id="grade">__</span></p>
+<p id="grade2"></p>
+
+<script>
+document.getElementById("form1").onsubmit=function() {
+       snack = parseInt(document.querySelector('input[name = "snack"]:checked').value);
+	   drink = parseInt(document.querySelector('input[name = "drink"]:checked').value);
+	   tv = parseInt(document.querySelector('input[name = "tv"]:checked').value);
+	   prof = parseInt(document.querySelector('input[name = "prof"]:checked').value);
+	   media = parseInt(document.querySelector('input[name = "media"]:checked').value);
+	   
+	   result = snack + drink + tv + prof + media;
+	   
+	   document.getElementById("grade").innerHTML = result;
+	   
+	   if (0<=result && result <=2) {result2 = "@tide_pod96<br /><img src='@tide_pod96.jpg' width='300' />"};
+	   if (3<=result && result <=5) {result2 = "@xX_PrincessPod_Xx<br /><img src='@xX_PrincessPod_Xx.jpg' width='300' />"};
+	   if (6<=result && result <=8) {result2 = "@SmokePodEveryDay420<br /><img src='@SmokePodEveryDay420.jpg' width='300' />"};
+	   if (9<=result && result <=12) {result2 = "@FlowingWithTheTide<br /><img src='@FlowingWithTheTide.jpg' width='300' />"};
+	   if (13<=result && result <=16) {result2 = "@Supreme_x_TidePod<br /><img src='@Supreme_x_TidePod.jpg' width='300' />"};
+	   if (17<=result && result <=20) {result2 = "@DemonPod666<br /><img src='@DemonPod666.jpg' width='300' />"};
+
+	   document.getElementById("grade2").innerHTML = result2;
+	   
+		/*
+		var tp;
+		if (result >= 0 && result <= 2) {
+		tp = "@tide_pod96";
+		document.write("Your Tide code is " + result + ". You are " + tp);
+		} else if (result >= 3 && result <= 5) {
+		tp = "@xX_PrincessPod_Xx";
+		document.write("Your Tide code is " + result + ". You are " + tp);
+		} else if (result >= 6 && result <= 8) {
+		tp = "@SmokePodEveryDay420";
+		document.write("Your Tide code is " + result + ". You are " + tp);
+		} else if (result >= 9 && result <= 12) {
+		tp = "@FlowingWithTheTide";
+		document.write("Your Tide code is " + result + ". You are " + tp);
+		} else if (result >= 13 && result <= 16) {
+		tp = "@Supreme_x_TidePod";
+		document.write("Your Tide code is " + result + ". You are " + tp);
+		} else {
+		tp = "@DemonPod666";
+		document.write("Your Tide code is " + result + ". You are " + tp);
+		}
+		
+		 grading = [
+			   {score:0,feedback:"I don't think you studied", image: "0.jpg"},
+			   {score:25,feedback:"You need to spend more time. Try again", image: "25.jpg"},
+			   {score:50,feedback:"I think you could do better. Try again.", image: "50.jpg"},
+			   {score:75,feedback:"So close. Try again.", image: "75.jpg"},
+			   {score:100,feedback:"Excellent! You're a JavaScript pro!", image: "100.jpg"}
+			   ];
+	  
+	  
+		for(i=0; i<grading.length; i++) {
+			if(result == grading[i].score) {
+			result2 = grading[i].feedback + "<br /><img src='" + grading[i].image + "' width='300'  />";
+			  }
+			  }
+		*/
+		
+return false; // required to not refresh the page; just leave this here
+} //this ends the submit function
+
+</script>
+
+</div>
+</body>
+</html>
+
